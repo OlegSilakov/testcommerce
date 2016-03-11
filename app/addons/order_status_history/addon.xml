@@ -4,6 +4,8 @@
     <name>Order status history</name>
     <description>Test module shows history of order status.</description>
 
+    <status>active</status>
+
     <default_language>en</default_language>
     
 </addon>
