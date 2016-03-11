@@ -1,0 +1,13 @@
+### CS-Cart directories
+images/*
+var/*
+app/addons/*/certificates/*
+app/payments/*/certificates/*
+
+### CS-Cart files
+app/schemas/Tygh/Helpdesk.php
+app/schemas/literal_converter/utf8.php
+local_conf.php
+sd*.sh
+sp*.php
+.htaccess*
