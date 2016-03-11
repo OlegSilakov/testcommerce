@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+    <id>order_status_history</id>
+    <name>Order status history</name>
+    <description>Test module shows history of order status.</description>
+
+    <default_language>en</default_language>
+    
+</addon>
