@@ -11,6 +11,6 @@ function fn_save_status_change ($order_id, $old_status, $new_status, $user_id, $
 		'timestamp' => $timestamp,
 	);
 	$history_item = db_query("INSERT INTO ?:order_status_history ?e", $_data);
-	return $history_item
+	return $history_item;
 }
 ?>
