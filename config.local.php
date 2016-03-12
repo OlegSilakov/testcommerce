@@ -17,10 +17,22 @@ if (!defined('BOOTSTRAP')) { die('Access denied'); }
 /*
  * PHP options
  */
+// Режим разработчика, для отображения ошибок
+define('DEVELOPMENT', true);
 
-// Log everything, but do not display
+// Отображение ошибок SMARTY и PHP на экран.
 error_reporting(E_ALL);
-ini_set('display_errors', 0);
+ini_set('display_errors', 'on');
+ini_set('display_startup_errors', true);
+
+// Выключаем PHP кэш блоков
+$config['tweaks'] = array (
+    'disable_block_cache' => true, 
+);
+
+// // Log everything, but do not display
+// error_reporting(E_ALL);
+// ini_set('display_errors', 0);
 
 // Set maximum memory limit
 if (PHP_INT_SIZE == 4 && (substr(ini_get('memory_limit'), 0, -1) < "64")) {
@@ -160,9 +172,6 @@ if (file_exists(DIR_ROOT . '/local_conf.php')) {
     include_once(DIR_ROOT . '/local_conf.php');
 }
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-define('DEVELOPMENT', true);
 
 // Enable DEV mode if Product status is not empty (like Beta1, dev, etc.)
 if (PRODUCT_STATUS != '' && !defined('DEVELOPMENT')) {
