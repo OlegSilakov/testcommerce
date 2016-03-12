@@ -9,17 +9,18 @@
     <default_language>en</default_language>
 
     <queries>
-    	<item for="install">DROP TABLE IF EXISTS ?:order_status_history;</item>
+    	<item for="install">DROP TABLE IF EXISTS ?:order_status_history</item>
 	    	<item for="install">
-	    		CREATE TABLE '?:order_status_history' (
-	    			'history_id' int(8) unsigned NOT NULL,
-	    			'old_status' char,
-	    			'new_status' char,
-	    			'user_id' int(8),
-	    			'timestamp' int(11),
-	    			PRIMARY KEY ('history_id)
-	    		) Engine=MyISAM DEFAULT CHARSET UTF8; 
+	    		CREATE TABLE ?:order_status_history (
+	    			history_id int(11) unsigned NOT NULL auto_increment,
+	    			order_id int(11) NOT NULL,
+	    			old_status varchar(20),
+	    			new_status varchar(20) NOT NULL,
+	    			user_id int(11) NOT NULL,
+	    			timestamp int(11) NOT NULL,
+	    			PRIMARY KEY (history_id)
+	    		) Engine=MyISAM DEFAULT CHARSET UTF8
 	    	</item>
-    	<item for="uninstall">DROP TABLE IF EXISTS ?:order_status_history;</item>
+    	<item for="uninstall">DROP TABLE IF EXISTS ?:order_status_history</item>
     </queries>
 </addon>
