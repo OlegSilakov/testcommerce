@@ -88,7 +88,7 @@ $config['tweaks'] = array (
     // Auto - false for ULT, true for MVE.
     'sanitize_user_html' => 'auto',
     'anti_csrf' => true, // protect forms from CSRF attacks
-    'disable_block_cache' => false, // used to disable block cache
+    'disable_block_cache' => true, // used to disable block cache
     'disable_localizations' => true, // Disable Localizations functionality
     'disable_dhtml' => false, // Disable Ajax-based pagination and Ajax-based "Add to cart" button
     'dev_js' => false, // set to true to disable js files compilation
@@ -159,6 +159,10 @@ define('MAX_FILES_IN_DIR', 1000);
 if (file_exists(DIR_ROOT . '/local_conf.php')) {
     include_once(DIR_ROOT . '/local_conf.php');
 }
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+define('DEVELOPMENT', true);
 
 // Enable DEV mode if Product status is not empty (like Beta1, dev, etc.)
 if (PRODUCT_STATUS != '' && !defined('DEVELOPMENT')) {
