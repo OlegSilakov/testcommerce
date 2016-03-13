@@ -13,4 +13,8 @@ function fn_save_status_change ($order_id, $old_status, $new_status, $user_id, $
 	$history_item = db_query("INSERT INTO ?:order_status_history ?e", $data);
 	return $history_item;
 }
+
+function fn_get_all_history () {
+	return db_get_array("SELECT * FROM ?:order_status_history");
+}
 ?>
