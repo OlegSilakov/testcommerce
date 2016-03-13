@@ -13,8 +13,8 @@
 				<td>{$order.order_id}</td>
 				<td>{$order.old_status}</td>
 				<td>{$order.new_status}</td>
-				<td>{$order.user_id}</td>
-				<td>{$order.timestamp}</td>	
+				<td><a href="{"profiles.update?user_id=`$o.user_id`"|fn_url}">{$order.user_id}</a></td>
+				<td>{$order.timestamp|date_format:"`$settings.Appearance.date_format`, `$settings.Appearance.time_format`"}</td>	
 			</tr>
 		</tbody>
 	{/foreach}
