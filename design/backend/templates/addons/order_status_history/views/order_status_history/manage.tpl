@@ -1,0 +1,2 @@
+{capture name="mainbox"}
+{/capture}
